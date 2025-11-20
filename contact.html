@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Iqra Noor</title>
+    
+    <!-- External Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Code (Internal Stylesheet) -->
+    <style>
+        :root {
+            --bg-dark: #111119;
+            --primary-color: #6f42c1;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+            cursor: none;
+            overflow-x: hidden;
+        }
+
+        /* Custom Cursor */
+        .cursor-dot, .cursor-outline {
+            pointer-events: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; z-index: 9999; opacity: 0; transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .cursor-dot { width: 8px; height: 8px; background-color: var(--primary-color); }
+        .cursor-outline { width: 40px; height: 40px; border: 2px solid var(--primary-color); }
+        body:hover .cursor-dot, body:hover .cursor-outline { opacity: 1; }
+
+        /* Glassmorphism Navbar */
+        .navbar { background: var(--glass-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
+        .navbar .navbar-brand, .navbar .nav-link { color: #fff; font-weight: 600; }
+        .navbar .nav-link:hover { color: var(--primary-color); }
+        .navbar-toggler { border: none; filter: invert(1); }
+
+        /* Page Header */
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 80px;
+        }
+
+        /* Contact Form Styles */
+        .form-control {
+            background-color: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 12px 15px;
+        }
+        .form-control:focus {
+            background-color: var(--glass-bg);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+            color: #fff;
+        }
+        .form-control::placeholder {
+            color: #6c757d;
+        }
+
+        .btn-primary { background-color: var(--primary-color); border-color: var(--primary-color); padding: 12px 30px; font-weight: bold; transition: transform 0.3s, background-color 0.3s, border-color 0.3s; }
+        .btn-primary:hover { transform: scale(1.05); background-color: #5a349c; border-color: #5a349c; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cursor-dot, .cursor-outline { display: none; }
+            body { cursor: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Iqra Noor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Contact Form Section -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="display-4 fw-bold">Get In Touch</h1>
+                    <p class="lead text-secondary mt-3">I'm currently available for freelance opportunities. If you have a project in mind or just want to say hello, feel free to send me a message!</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8">
+                    <!-- ****** TO MAKE THIS FORM WORK, USE A SERVICE LIKE FORMSPREE.IO ****** -->
+                    <!-- 1. Go to formspree.io and create a new form endpoint. -->
+                    <!-- 2. Replace "YOUR_FORMSPREE_ENDPOINT" with your actual endpoint URL. -->
+                    <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+        <p class="text-secondary mb-0">&copy; 2025 Iqra Noor. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript Code -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Custom Cursor Logic
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorOutline = document.querySelector('.cursor-outline');
+            window.addEventListener('mousemove', function(e) {
+                const posX = e.clientX;
+                const posY = e.clientY;
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+                cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
+            });
+        });
+    </script>
+</body>
+</html>
